@@ -1,9 +1,9 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { CONFIG } from '../../../config';
-
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
+
 import { Photo } from '../../core/interfaces/photo.interface';
+import { CONFIG } from '../../../config';
 
 @Component({
   selector: 'app-single-photo-item',
@@ -18,8 +18,6 @@ export class SinglePhotoItemComponent {
   @Output() addFavorite = new EventEmitter<Photo>();
 
   photoUrl: string = '';
-
-  constructor() {}
 
   ngOnInit(): void {
     const size = this.size || 250;

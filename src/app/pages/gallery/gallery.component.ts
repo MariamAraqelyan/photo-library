@@ -28,10 +28,6 @@ export class GalleryComponent implements OnInit, OnDestroy {
   routeSubscription!: Subscription;
   storeSubscription!: Subscription;
 
-  trackByFn(_: any, { id }: Photo): number {
-    return id;
-  }
-
   ngOnInit(): void {
     this.routeSubscription = this.route.data
       .pipe(first())

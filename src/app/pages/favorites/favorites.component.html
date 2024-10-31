@@ -1,1 +1,17 @@
-<p>favorites works!</p>
+<div class="mb05">
+    <app-animate-data class="library" [library]="favorites$ | async">
+
+        @for(photo of favorites$ | async; track photo.id) {    
+            <app-single-photo-item [photo]="photo">
+                <button mat-button (click)="openPhoto(photo)">Open photo</button>
+            </app-single-photo-item>
+        }
+
+        @if(!(favorites$ | async)?.length) {
+            <div class="mt7">
+                <h1>There are no favorite photos yet!</h1>
+            </div>
+        }
+
+    </app-animate-data>
+</div>

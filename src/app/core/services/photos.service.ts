@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { DBMainService } from './dbmain.service';
 import { Photo } from '../interfaces/photo.interface';
@@ -11,12 +11,13 @@ export class PhotosService {
   private updatePhotos = new BehaviorSubject<Photo[]>([]);
   private saveState = new BehaviorSubject<Photo[]>([]);
   private state: Observable<Photo[]> = this.saveState as Observable<Photo[]>;
+  private dbData = inject(DBMainService)
 
   private page: number = 0;
   totalPhotos: number = 0;
 
-  constructor(private dbData: DBMainService) {
-    this.totalPhotos = dbData.totalPhotos;
+  constructor() {
+    this.totalPhotos = this.dbData.totalPhotos;
   }
 
   loadNext(page = this.page) {

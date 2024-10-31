@@ -4,7 +4,7 @@
   [hasMore]="hasMore"
 >
 
-<!-- <app-animate-data class="library" [library]="library"> -->
+<app-animate-data class="library mb3" [library]="library">
     @for(photo of library; track photo.id) {
         <app-single-photo-item
             [photo]="photo"
@@ -13,11 +13,10 @@
     } 
 
     @if(!library.length) {
-        <div style="margin-top: 7rem">
-            <h1 style="font-weight: 500">{{ errorMessage }}</h1>
+        <div class="mt7">
+            <h1>{{ errorMessage }}</h1>
         </div>
     }
-
-  <!-- </app-animate-data> -->
+</app-animate-data>
 
 </app-infinite-scroll>

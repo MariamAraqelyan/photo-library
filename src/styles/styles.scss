@@ -1,9 +1,3 @@
-@import "./variables.scss";
-
-*,
-*:before,
-*:after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+@import "./padding.scss";
+@import "./margin.scss";
+@import "./base.scss";
