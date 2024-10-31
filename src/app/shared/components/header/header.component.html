@@ -1,1 +1,25 @@
-<p>header works!</p>
+<mat-toolbar>
+    <nav class="nav">
+      <ul class="nav__list">
+        <button
+          mat-stroked-button
+          class="page-button"
+          color="primary"
+          routerLink="/"
+          routerLinkActive="mat-flat-button"
+        >
+        <!-- [routerLinkActiveOptions]="{ exact: true }" -->
+          Photos
+        </button>
+        <button
+          mat-stroked-button
+          class="page-button"
+          color="accent"
+          routerLink="/favorites"
+          routerLinkActive="mat-flat-button"
+        >
+          Favorites
+        </button>
+      </ul>
+    </nav>
+  </mat-toolbar>

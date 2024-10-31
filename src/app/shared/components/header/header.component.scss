@@ -1,0 +1,31 @@
+/**************************/
+/* NAVIGATION */
+:host {
+    ::ng-deep{
+        .mat-toolbar-row,
+        .mat-toolbar-single-row {
+            padding: 2.5rem;
+            z-index: 999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+    }
+}
+
+.mat-toolbar {
+  background: var(--amber-color);
+}
+
+.nav {
+  &__list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 7.8rem;
+  }
+}
+
+.page-button {
+  padding: 0.5rem 6rem;
+}

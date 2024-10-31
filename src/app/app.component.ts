@@ -9,4 +9,16 @@ import { HeaderComponent } from './shared/components/header/header.component';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {}
+export class AppComponent {
+
+  // constructor(private photoStore: PhotosStoreService) {}
+
+  // ngOnInit(): void {
+  //   this.checkForStorage();
+  // }
+
+  // checkForStorage() {
+  //   const favorites = JSON.parse(localStorage.getItem('favorites') as string);
+  //   if (favorites.length) this.photoStore.setState(favorites as Photo[]);
+  // }
+}

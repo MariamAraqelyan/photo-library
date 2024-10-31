@@ -1,2 +1,10 @@
+<!-- <app-header></app-header>
+<router-outlet></router-outlet> -->
+
 <app-header></app-header>
-<router-outlet></router-outlet>
+<!-- [@fadeAnimation] -->
+<main role="main">
+  <div class="main-body">
+    <router-outlet #outlet="outlet"></router-outlet>
+  </div>
+</main>

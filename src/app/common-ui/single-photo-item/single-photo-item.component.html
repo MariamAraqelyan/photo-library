@@ -1,0 +1,17 @@
+@if(photo) {
+    <mat-card class="example-card">
+        <img mat-card-image [src]="photoUrl" alt="Photo of a Shiba Inu" />
+        <mat-card-actions>
+            @if(photo.favorite) {
+                <span><div class="heart">&hearts;</div>
+                    <ng-content></ng-content>
+                </span>
+            }
+            @else {
+                <button mat-button (click)="addToFavorite(photo)">
+                    Add to favorites &hearts;
+                </button>
+            }
+        </mat-card-actions>
+    </mat-card>
+}

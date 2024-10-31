@@ -1,1 +1,23 @@
-<p>gallery works!</p>
+<app-infinite-scroll
+  (scrolled)="onScroll()"
+  [loading]="loading"
+  [hasMore]="hasMore"
+>
+
+<!-- <app-animate-data class="library" [library]="library"> -->
+    @for(photo of library; track photo.id) {
+        <app-single-photo-item
+            [photo]="photo"
+            (addFavorite)="addToFavorite(photo)"
+        ></app-single-photo-item>
+    } 
+
+    @if(!library.length) {
+        <div style="margin-top: 7rem">
+            <h1 style="font-weight: 500">{{ errorMessage }}</h1>
+        </div>
+    }
+
+  <!-- </app-animate-data> -->
+
+</app-infinite-scroll>
