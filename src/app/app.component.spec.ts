@@ -11,7 +11,7 @@ describe('AppComponent', () => {
         AppComponent,
         RouterModule, 
         RouterTestingModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
       ],
     }).compileComponents();
   });

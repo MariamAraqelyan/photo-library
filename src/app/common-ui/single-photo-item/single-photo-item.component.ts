@@ -1,5 +1,5 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import {MatCardModule} from '@angular/material/card';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import {MatCardActions, MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 
 import { Photo } from '@interfaces/photo.interface';
@@ -8,9 +8,10 @@ import { CONFIG } from '@config';
 @Component({
   selector: 'app-single-photo-item',
   standalone: true,
-  imports: [MatCardModule, MatButtonModule],
+  imports: [MatCardModule, MatCardActions, MatButtonModule],
   templateUrl: './single-photo-item.component.html',
-  styleUrl: './single-photo-item.component.scss'
+  styleUrl: './single-photo-item.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SinglePhotoItemComponent {
   @Input('photo') photo!: Photo;

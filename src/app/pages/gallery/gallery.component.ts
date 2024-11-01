@@ -36,7 +36,6 @@ export class GalleryComponent implements OnInit, OnDestroy {
 
   getNext() {
     this.storeSubscription = this.photoList.loadNext().subscribe((photos) => {
-      console.log(this.library, 'library..')
       this.library.push(...photos);
       this.hasMore = this.library.length < this.photoList.totalPhotos;
       this.loading = false;
@@ -47,20 +46,17 @@ export class GalleryComponent implements OnInit, OnDestroy {
   onScroll() {
     this.loading = true;
     this.getNext();
-    debugger
   }
 
   addToFavorite(photo: Photo) {
     const index = this.library.findIndex((el) => el.id === photo.id);
     this.library[index].favorite = true;
-
-    this.photoList.addToFavorite(photo); ///////////////////////////change /////////////////
+    this.photoList.addToFavorite(photo);
   }
 
   ngOnDestroy(): void {
     this.routeSubscription.unsubscribe();
     this.storeSubscription.unsubscribe();
-
     this.photoList.emptyPhotos();
   }
 

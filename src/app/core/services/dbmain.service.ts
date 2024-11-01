@@ -38,7 +38,6 @@ export class DBMainService {
   }
 
   getRange(page: number, limit = this.limit) {
-    debugger
     const lower = page * limit;
     let upper = (page + 1) * limit;
     if (upper > this.totalPhotos - 1) upper = this.totalPhotos;

@@ -1,4 +1,4 @@
-import { Component, inject, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnDestroy, OnInit } from '@angular/core';
 import {MatButtonModule} from '@angular/material/button';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -11,6 +11,7 @@ import { PhotosService } from '@services/photos.service';
   selector: 'app-single-photo-info',
   standalone: true,
   imports: [SinglePhotoItemComponent, MatButtonModule],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './single-photo-info.component.html',
   styleUrl: './single-photo-info.component.scss'
 })

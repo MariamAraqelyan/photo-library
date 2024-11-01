@@ -3,7 +3,8 @@
         <img mat-card-image [src]="photoUrl" alt="Photo of a Shiba Inu" />
         <mat-card-actions>
             @if(photo.favorite) {
-                <span><div class="heart ml16 pd4">&hearts;</div>
+                <span>
+                    <div class="heart ml16 pd4">&hearts;</div>
                     <ng-content></ng-content>
                 </span>
             }
