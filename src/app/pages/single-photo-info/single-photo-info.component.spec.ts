@@ -1,8 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SinglePhotoInfoComponent } from './single-photo-info.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientModule } from '@angular/common/http';
+
+import { SinglePhotoInfoComponent } from './single-photo-info.component';
 
 describe('SinglePhotoInfoComponent', () => {
   let component: SinglePhotoInfoComponent;

@@ -1,12 +1,13 @@
 import { TestBed } from '@angular/core/testing';
-
-import { PhotosService } from './photos.service';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { DBMainService } from './dbmain.service';
-import { Photo } from '../interfaces/photo.interface';
-import { PHOTOS } from '../../../../test-data/photos';
-import { FAVORITES } from '../../../../test-data/favorites';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+
+import { Photo } from '@interfaces/photo.interface';
+import { PHOTOS } from '@testData/photos';
+import { FAVORITES } from '@testData/favorites';
+
+import { DBMainService } from './dbmain.service';
+import { PhotosService } from './photos.service';
 
 describe('PhotosService', () => {
   let service: PhotosService;

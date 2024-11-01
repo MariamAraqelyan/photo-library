@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { Photo } from '../../../core/interfaces/photo.interface';
-import { animationList } from '../../../@theme/animations';
+import { animationList } from 'src/app/@theme/animations/animations';
 
 @Component({
   selector: 'app-animate-data',

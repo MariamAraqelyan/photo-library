@@ -2,8 +2,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 
-import { Photo } from '../../core/interfaces/photo.interface';
-import { CONFIG } from '../../../config';
+import { Photo } from '@interfaces/photo.interface';
+import { CONFIG } from '@config';
 
 @Component({
   selector: 'app-single-photo-item',

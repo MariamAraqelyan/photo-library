@@ -3,9 +3,9 @@ import {MatButtonModule} from '@angular/material/button';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
-import { SinglePhotoItemComponent } from '../../common-ui/single-photo-item/single-photo-item.component';
-import { Photo } from '../../core/interfaces/photo.interface';
-import { PhotosService } from '../../core/services/photos.service';
+import { SinglePhotoItemComponent } from '@commonUi/single-photo-item/single-photo-item.component';
+import { Photo } from '@interfaces/photo.interface';
+import { PhotosService } from '@services/photos.service';
 
 @Component({
   selector: 'app-single-photo-info',

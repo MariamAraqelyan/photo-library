@@ -4,10 +4,10 @@ import { Router } from '@angular/router';
 import { AsyncPipe } from '@angular/common';
 import {MatButtonModule} from '@angular/material/button';
 
-import { AnimateDataComponent } from '../../shared/components/animate-data/animate-data.component';
-import { PhotosService } from '../../core/services/photos.service';
-import { Photo } from '../../core/interfaces/photo.interface';
-import { SinglePhotoItemComponent } from '../../common-ui/single-photo-item/single-photo-item.component';
+import { PhotosService } from '@services/photos.service';
+import { Photo } from '@interfaces/photo.interface';
+import { SinglePhotoItemComponent } from '@commonUi/single-photo-item/single-photo-item.component';
+import { AnimateDataComponent } from '@animations/animate-data/animate-data.component';
 
 @Component({
   selector: 'app-favorites',

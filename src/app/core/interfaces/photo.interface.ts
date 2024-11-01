@@ -1,11 +1,16 @@
 export interface Photo {
     id: number;
-    format?: string;
-    width?: number;
-    height?: number;
-    filename?: string;
-    author?: string;
-    author_url?: string;
-    post_url?: string;
+    author: string;
     favorite?: boolean;
+}
+
+export interface BasePhoto {
+    id: number;
+    author: string;
+    author_url: string;
+    filename: string;
+    format: string;
+    post_url: string;
+    width: number;
+    height: number;
 }

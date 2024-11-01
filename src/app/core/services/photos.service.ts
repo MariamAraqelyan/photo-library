@@ -1,7 +1,9 @@
 import { inject, Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
+
+import { Photo } from '@interfaces/photo.interface';
+
 import { DBMainService } from './dbmain.service';
-import { Photo } from '../interfaces/photo.interface';
 
 @Injectable({
   providedIn: 'root'

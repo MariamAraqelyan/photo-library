@@ -1,8 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { FavoritesComponent } from './favorites.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { FavoritesComponent } from './favorites.component';
 
 describe('FavoritesComponent', () => {
   let component: FavoritesComponent;

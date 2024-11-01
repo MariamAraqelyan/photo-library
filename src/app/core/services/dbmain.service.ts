@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { CONFIG } from '../../../config';
+
 import { BehaviorSubject, catchError, delay, map, Observable, of, tap } from 'rxjs';
-import { Photo } from '../interfaces/photo.interface';
+import { BasePhoto, Photo } from '@interfaces/photo.interface';
+import { CONFIG } from '@config';
 
 @Injectable({
   providedIn: 'root'
@@ -18,8 +19,8 @@ export class DBMainService {
   http: HttpClient = inject(HttpClient);
 
   load() {
-    return this.http.get<Photo[]>(CONFIG.getListOfPhotos).pipe(
-      map((photos) =>
+    return this.http.get<BasePhoto[]>(CONFIG.getListOfPhotos).pipe(
+      map((photos) => 
         photos.map((p) => {
           return {
             author: p.author,

@@ -3,11 +3,11 @@ import { Subscription, first } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { AsyncPipe } from '@angular/common';
 
-import { PhotosService } from '../../core/services/photos.service';
-import { InfiniteScrollComponent } from '../../shared/components/infinite-scroll/infinite-scroll.component';
-import { AnimateDataComponent } from '../../shared/components/animate-data/animate-data.component';
-import { SinglePhotoItemComponent } from '../../common-ui/single-photo-item/single-photo-item.component';
-import { Photo } from '../../core/interfaces/photo.interface';
+import { PhotosService } from '@services/photos.service';
+import { SinglePhotoItemComponent } from '@commonUi/single-photo-item/single-photo-item.component';
+import { Photo } from '@interfaces/photo.interface';
+import { InfiniteScrollComponent } from '@scrolls/infinite-scroll/infinite-scroll.component';
+import { AnimateDataComponent } from '@animations/animate-data/animate-data.component';
 
 @Component({
   selector: 'app-gallery',

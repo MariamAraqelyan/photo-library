@@ -1,10 +1,11 @@
 import { fakeAsync, flush, TestBed, tick } from '@angular/core/testing';
 
-import { DBMainService } from './dbmain.service';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { PHOTOS } from '../../../../test-data/photos';
 import { BehaviorSubject } from 'rxjs';
-import { Photo } from '../interfaces/photo.interface';
+import { Photo } from '@interfaces/photo.interface';
+import { PHOTOS } from '@testData/photos';
+
+import { DBMainService } from './dbmain.service';
 
 describe('DBMainService', () => {
   let service: DBMainService;
