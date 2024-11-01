@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AnimateDataComponent } from './animate-data.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('AnimateDataComponent', () => {
   let component: AnimateDataComponent;
@@ -8,7 +9,10 @@ describe('AnimateDataComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AnimateDataComponent]
+      imports: [
+        AnimateDataComponent,
+        BrowserAnimationsModule,
+      ]
     })
     .compileComponents();
 
