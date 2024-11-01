@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, EventEmitter, Inject, input, Input, OnDestroy, OnInit, Output, PLATFORM_ID, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, EventEmitter, Inject, Input, OnDestroy, OnInit, Output, PLATFORM_ID, ViewChild } from '@angular/core';
 import { debounceTime, distinctUntilChanged, fromEvent, Subscription, tap } from 'rxjs';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
@@ -54,6 +54,6 @@ export class InfiniteScrollComponent implements OnInit, AfterViewInit, OnDestroy
   }
 
   ngOnDestroy(): void {
-    // this.scrollSubscription.unsubscribe();
+    this.scrollSubscription?.unsubscribe();
   }
 }

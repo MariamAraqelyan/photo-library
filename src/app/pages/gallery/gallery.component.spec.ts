@@ -2,9 +2,10 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { GalleryComponent } from './gallery.component';
 import { HttpClientModule } from '@angular/common/http';
-import { RouterTestingModule } from '@angular/router/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ActivatedRoute } from '@angular/router';
+import { RouterModule } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
+import { PLATFORM_ID } from '@angular/core';
 
 describe('GalleryComponent', () => {
   let component: GalleryComponent;
@@ -16,7 +17,11 @@ describe('GalleryComponent', () => {
         GalleryComponent,
         HttpClientModule,
         BrowserAnimationsModule,
+        RouterModule, 
         RouterTestingModule,
+      ],
+      providers: [
+        { provide: PLATFORM_ID, useValue: '' },
       ]
     })
     .compileComponents();

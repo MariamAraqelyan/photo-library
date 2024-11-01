@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { InfiniteScrollComponent } from './infinite-scroll.component';
+import { PLATFORM_ID } from '@angular/core';
 
 describe('InfiniteScrollComponent', () => {
   let component: InfiniteScrollComponent;
@@ -8,7 +9,10 @@ describe('InfiniteScrollComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [InfiniteScrollComponent]
+      imports: [InfiniteScrollComponent],
+      providers: [
+        { provide: PLATFORM_ID, useValue: '' },
+      ]
     })
     .compileComponents();
 
