@@ -1,12 +1,9 @@
 <ng-content></ng-content>
 <div
   class="spinnerContainer"
-  #anchor
+  [ngStyle]="{ height: hasMore() ? '50vh' : '2vh' }"
 >
-<!-- [ngStyle]="{ height: hasMore ? '50vh' : '2vh' }" -->
-<!-- [ngStyle]="{'color': textColor, 'font-size': fontSize + 'px'}" -->
-
-    @if(loading) {
+    @if(loading()) {
         <mat-spinner class="anchorObserve"></mat-spinner>
     }
 </div>

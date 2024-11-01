@@ -1,29 +1,24 @@
-import { AfterViewInit, Component, ElementRef, EventEmitter, Inject, Input, OnDestroy, OnInit, Output, PLATFORM_ID, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Inject, input, OnDestroy, Output, PLATFORM_ID } from '@angular/core';
 import { debounceTime, distinctUntilChanged, fromEvent, Subscription, tap } from 'rxjs';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { isPlatformBrowser } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-infinite-scroll',
   standalone: true,
-  imports: [MatProgressSpinnerModule],
+  imports: [MatProgressSpinnerModule, CommonModule],
   templateUrl: './infinite-scroll.component.html',
   styleUrl: './infinite-scroll.component.scss'
 })
-export class InfiniteScrollComponent implements OnInit, AfterViewInit, OnDestroy {
-  @Input() loading!: boolean;
-  // loading = input<boolean>(false)
-  // hasMore = input<boolean>(false)
-  @Input() hasMore!: boolean;
+export class InfiniteScrollComponent implements AfterViewInit, OnDestroy {
+  loading = input<boolean>(false);
+  hasMore = input<boolean>(false);
   @Output() scrolled = new EventEmitter();
-  @ViewChild('anchor', { static: true }) anchor!: ElementRef;
 
   totalElements: number = 0;
   scrollSubscription?: Subscription;
   
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
-
-  ngOnInit(): void {}
 
   ngAfterViewInit(): void {
     const options = {
@@ -33,7 +28,6 @@ export class InfiniteScrollComponent implements OnInit, AfterViewInit, OnDestroy
     if (isPlatformBrowser(this.platformId)) {
       const mainBody = document.querySelector('.main-body');
       const scrollEvent = fromEvent(mainBody as Element, 'scroll');
-      // debugger
       this.scrollSubscription = scrollEvent
       .pipe(
         debounceTime(200),
