@@ -1,12 +1,16 @@
 import { AfterViewInit, Component, EventEmitter, Inject, input, OnDestroy, Output, PLATFORM_ID } from '@angular/core';
 import { debounceTime, distinctUntilChanged, fromEvent, Subscription, tap } from 'rxjs';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatProgressSpinner, MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
+
 
 @Component({
   selector: 'app-infinite-scroll',
   standalone: true,
-  imports: [MatProgressSpinnerModule, CommonModule],
+  imports: [
+    CommonModule,
+    MatProgressSpinnerModule
+  ],
   templateUrl: './infinite-scroll.component.html',
   styleUrl: './infinite-scroll.component.scss'
 })

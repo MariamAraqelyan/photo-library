@@ -1,7 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import {
-  Router,
   Resolve,
   RouterStateSnapshot,
   ActivatedRouteSnapshot,
@@ -21,7 +19,6 @@ export class PhotosResolver implements Resolve<boolean> {
         route: ActivatedRouteSnapshot,
         state: RouterStateSnapshot
     ): Observable<any> {
-        // debugger
-        return !this.dbMain.isEmpty() ? of([]) : this.photoList.loadPhotos();
+        return this.dbMain.isEmpty() ? this.photoList.loadPhotos() : of([]);
     }
 }

@@ -4,6 +4,6 @@
   [ngStyle]="{ height: hasMore() ? '50vh' : '2vh' }"
 >
     @if(loading()) {
-        <mat-spinner class="anchorObserve"></mat-spinner>
+        <mat-progress-spinner class="spinner" mode="indeterminate" diameter="50"></mat-progress-spinner>
     }
 </div>
