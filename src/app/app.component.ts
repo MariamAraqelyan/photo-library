@@ -3,6 +3,9 @@ import { RouterOutlet } from '@angular/router';
 import { fadeAnimation } from '@animations/animations';
 import { HeaderComponent } from '@components/header/header.component';
 
+/**
+ * Aplication App Component
+*/
 @Component({
   selector: 'app-root',
   standalone: true,

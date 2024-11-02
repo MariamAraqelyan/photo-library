@@ -3,6 +3,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterLink } from '@angular/router';
 
+/**
+ * Aplication Header Component
+*/
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -10,6 +13,4 @@ import { RouterLink } from '@angular/router';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
-export class HeaderComponent {
-
-}
+export class HeaderComponent {}

@@ -1,9 +1,9 @@
 import { AfterViewInit, Component, EventEmitter, Inject, input, OnDestroy, Output, PLATFORM_ID } from '@angular/core';
 import { debounceTime, distinctUntilChanged, fromEvent, Subscription, tap } from 'rxjs';
-import { MatProgressSpinner, MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 
-
+/** Presents Infinite Scroll */
 @Component({
   selector: 'app-infinite-scroll',
   standalone: true,
@@ -15,15 +15,31 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
   styleUrl: './infinite-scroll.component.scss'
 })
 export class InfiniteScrollComponent implements AfterViewInit, OnDestroy {
-  loading = input<boolean>(false);
-  hasMore = input<boolean>(false);
+  /**
+   * The boolean property "loading" 
+   * allows dynamic checking status of load
+  */
+  loading = input<boolean>(false); // I modified these 2 and made them using signals to show off my skills.
+  /**
+   * The boolean property "hasMore" 
+   * allows dynamic checking for new data during scroll
+  */
+  hasMore = input<boolean>(false); // I modified these 2 and made them using signals to show off my skills.
+
+  /** Emit when the user scrolls to the bottom of a tab */
   @Output() scrolled = new EventEmitter();
 
-  totalElements: number = 0;
+  /** User for subscription cleanup */
   scrollSubscription?: Subscription;
   
+  /**
+   * Constructor of InfiniteScrollComponent
+  */
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
+  /**
+   * AfterViewInit
+  */
   ngAfterViewInit(): void {
     const options = {
       thresold: 0.9,
@@ -51,6 +67,9 @@ export class InfiniteScrollComponent implements AfterViewInit, OnDestroy {
     }
   }
 
+  /**
+   * Cleanup pending subscriptions.
+  */
   ngOnDestroy(): void {
     this.scrollSubscription?.unsubscribe();
   }

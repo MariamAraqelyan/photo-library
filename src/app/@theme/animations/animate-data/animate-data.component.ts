@@ -4,6 +4,9 @@ import { CommonModule } from '@angular/common';
 import { Photo } from '../../../core/interfaces/photo.interface';
 import { animationList } from 'src/app/@theme/animations/animations';
 
+/**
+ * Aplication Animation Component
+*/
 @Component({
   selector: 'app-animate-data',
   standalone: true,
@@ -13,5 +16,6 @@ import { animationList } from 'src/app/@theme/animations/animations';
   styleUrl: './animate-data.component.scss'
 })
 export class AnimateDataComponent {
+  /** Dynamic data for photo list */
   @Input() library: Photo[] | null = [];
 }
